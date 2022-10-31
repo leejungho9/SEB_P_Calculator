@@ -8,43 +8,126 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border : 1px solid red;
     height: 100vh;
-}
+    background-image: url(./backImage3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
 
+}
 .calculator { 
     width : 350px;
     height: 497px;
-    border-radius: 15px;
-    background-color: #737272;
-    border: 1px solid blue;
-    
+    border-radius: 10px; 
+}
+.circle_section{
+    display: flex;
+    background-color: orange;
+    height: 30px;
+    align-items: center;
+    border-top-left-radius : 10px;
+    border-top-right-radius : 10px;
+    background-color: #4e4d4d;
+}
+.circle{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.circle:nth-child(1) {
+    background-color: red;
+    border: 2px solid rgb(230, 2, 2);
+    position: relative;
+}
+.circle:nth-child(1):hover::after {
+    content: "✖";
+    position: absolute;
+    /*bottom : 0 아래에 정렬 안됨*/
+    top: -2px;
+    left: 0.5px;
+    color : #fff;
+    font-size: 10px;
+
+}
+.circle:nth-child(2) {
+    background-color: rgb(238,174,36);
+    border: 2px solid  rgb(237, 167, 17);
+    position: relative;
+}
+.circle:nth-child(2):hover::before {
+    content: "-";
+    position: absolute;
+    top: -12px;
+    left: 1px;
+    color : #fff;
+    font-size: 22px;
+
+}
+.circle:nth-child(3) {
+    background-color: green;
+    border: 2px solid rgb(1, 105, 1);
+    position: relative;
+}
+
+.circle:nth-child(3):hover::before {
+    content: "+";
+    position: absolute;
+    top: -6px;
+    left: 0px;
+    color : #fff;
+    font-size: 15px;
+
+}
+
+.rsult_row{
+    height: 100px;
+    background-color: #4e4d4d;
 }
 
 .row {
     display: flex;
-}
-
-.rsult_row {
-    height: 104px;
-}
-
-.row {
     height: 70px;
 }
-
-.row > div {
+.row > div { 
     display: flex;
+    flex-grow: 1;
     color : #fff;
     font-size: 28px;
-    font-weight: bold;
+    font-weight: 500;
     justify-content: center;
     align-items: center;
     border : 1px solid #676767;
     width: 100px;
 }
+.gray {
+    background-color: #868686;
+}
 
-.result { 
+.gray:hover {
+    background-color: #7b7a7a;
+}
+.orange {
+    background-color: #f19019;
+}
+.orange:hover {
+    background-color: #e58612;
+}
+.number {
+    background-color: #acacac;
+}
+.number:hover{
+    background-color: #9c9c9c;
+}
+.zero{
+   flex-basis: 201px;
+   border-bottom-left-radius: 15px;
+}
+.round {
+    border-bottom-right-radius: 15px;
+}
+
+.display { 
     font-size: 60px;
     color: #fff;
     display: flex;
@@ -52,50 +135,4 @@ body {
     justify-content: flex-end;
     align-items: flex-end;
     padding: 20px;
-}
-
-.color1 {
-    background-color: #868686;
-}
-
-.color2 {
-    background-color: #f19019;
-}
-.zero{
-   width: 200px !important;
-   border-bottom-left-radius: 15px;
-}
-
-.number {
-    background-color: #acacac;
-}
-
-.round {
-    border-bottom-right-radius: 15px;
-}
-.circle_section{
-    display: flex;
-    padding : 10px;
-}
-.circle_section > div {
-    margin: 0 5px;
-}
-.circle1{ 
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: red;
-}
-
-.circle2{ 
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: rgb(226 230 0);
-}
-.circle3{ 
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: rgb(62, 173, 34);
 }
