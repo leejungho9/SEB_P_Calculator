@@ -91,14 +91,14 @@ body {
 }
 .row > div { 
     display: flex;
-    flex-grow: 1;
-    color : #fff;
+    color: #fff;
     font-size: 28px;
     font-weight: 500;
     justify-content: center;
     align-items: center;
-    border : 1px solid #676767;
-    width: 100px;
+    border: 1px solid #676767;
+    width: 88px;
+    flex-grow: 1;
 }
 .gray {
     background-color: #868686;
@@ -135,4 +135,8 @@ body {
     justify-content: flex-end;
     align-items: flex-end;
     padding: 20px;
+}
+
+.big{
+    flex-basis: 50%;
 }
