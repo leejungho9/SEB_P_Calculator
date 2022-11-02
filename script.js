@@ -45,9 +45,22 @@ buttons.addEventListener('click' , function(event) {
         console.log("연산자 눌림");
     }
     if(action === 'decimal') {
+
+        if( display.textContent === '0' ) {
+            display.textContent = "0.";
+        } else if( firstNum !== '0') {
+            display.textContent += "."
+        } 
+
+        previousKey = 'decimal';
         console.log("소수점 눌림");
     }
+
     if(action === 'clear') {
+        display.textContent = '0';
+        firstNum = '0';
+        previousNum = '0';
+        previousKey = 'clear';
         console.log("초기화 눌림");
     }
     if(action === 'result') {
