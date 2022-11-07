@@ -97,7 +97,7 @@ body {
     justify-content: center;
     align-items: center;
     border: 1px solid #676767;
-    width: 88px;
+    width: 87px;
     flex-grow: 1;
 }
 .gray {
@@ -120,13 +120,17 @@ body {
     background-color: #9c9c9c;
 }
 .zero{
-   flex-basis: 201px;
    border-bottom-left-radius: 15px;
 }
 .round {
     border-bottom-right-radius: 15px;
 }
-
+.decimal{
+    background-color: #acacac;
+}
+.decimal:hover{
+    background-color: #9c9c9c;
+}
 .display { 
     font-size: 60px;
     color: #fff;

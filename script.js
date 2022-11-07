@@ -11,7 +11,7 @@ function calculate(n1, op, n2) {
     switch(op) {
         case '+' : result = n1 + n2; break;
         case '-' : result = n1 - n2; break;
-        case '*' : result = n1 * n2; break;
+        case '×' : result = n1 * n2; break;
         case '/' : result =  n1 / n2; break;
       }
     
@@ -46,11 +46,11 @@ buttons.addEventListener('click' , function(event) {
     }
     if(action === 'decimal') {
 
-        if( display.textContent === '0' ) {
-            display.textContent = "0.";
-        } else if( firstNum !== '0') {
-            display.textContent += "."
-        } 
+        if(!display.textContent.includes('.')  && previousKey !== 'operator') {    
+            display.textContent += '.';
+        }else if(previousKey=== 'operator') {
+            display.textContent = '0.';
+        }
 
         previousKey = 'decimal';
         console.log("소수점 눌림");
@@ -64,9 +64,15 @@ buttons.addEventListener('click' , function(event) {
         console.log("초기화 눌림");
     }
     if(action === 'result') {
-        previousNum = display.innerHTML;
-        display.innerHTML = calculate(firstNum, operatorForAdvanced , previousNum)
-        console.log("결과 눌림");
+        
+        if(previousKey === 'result') {
+            display.textContent = calculate(display.textContent, operatorForAdvanced, previousNum)
+        }else {
+            previousNum = display.innerHTML;
+            display.innerHTML = calculate(firstNum, operatorForAdvanced , previousNum)
+        }
+
+        previousKey = 'result'
     }
 
 })
